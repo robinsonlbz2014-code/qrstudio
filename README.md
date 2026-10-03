@@ -2,18 +2,6 @@
 
 A self-contained QR code generator for GitHub Pages. All HTML, CSS, JavaScript, icons, and the QR encoder are included in `index.html`. No API key, CDN, npm install, or build step is needed.
 
-## Publish on GitHub Pages
-
-1. Create a new GitHub repository, or use the repository where you want the generator to live.
-2. Upload `index.html` to its root folder and commit it. If your repository already has a website, put the file in a `qr/` folder instead to keep the existing homepage.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**. Select **main** (or the branch where you uploaded the file) and **/(root)**, then click **Save**.
-5. Open the site URL shown on that settings page once deployment finishes. A normal project URL looks like `https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/`. If you used a `qr/` folder, add `/qr/` to the site's URL.
-
-If the existing repository already publishes from `/docs`, place the HTML inside that folder (or `docs/qr/`) and keep its current Pages settings. If it uses a custom deployment workflow, add this static HTML to that workflow's published output instead of changing the workflow.
-
-GitHub's instructions: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
-
 ## Use it
 
 1. Enter a complete website address, such as `https://example.com`, or any text. The content is encoded exactly as entered, including whitespace.
@@ -39,11 +27,6 @@ Web Share reference: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/
 - Local generation, no analytics, no external requests, and no stored input history.
 
 The input is limited to 2,000 UTF-8 bytes. Non-Latin characters and emoji use multiple bytes. Shorter content produces less-dense codes that are generally easier to scan. The QR image itself has no expiry; a linked website may still change or stop working.
-
-## Customize
-
-Open `index.html` in a text editor. The color palette is defined in `:root` near the top; the page's HTML follows the CSS. The final script contains the app logic. The middle script is the bundled QR encoder; keep its MIT license notice intact.
-
 QR encoder: Project Nayuki's QR Code generator library, used under its MIT license. The full copyright and license notice is retained in the HTML.
 
 https://www.nayuki.io/page/qr-code-generator-library
